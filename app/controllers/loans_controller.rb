@@ -21,7 +21,7 @@ class LoansController < ApplicationController
   
   def show
     @loan = Loan.find(params[:id])
-     if @loan.payed_deadline < Date.parse('2012.03.01') && !@loan.pay #TODO change with Date.today
+     if @loan.payed_deadline < Date.today && !@loan.pay #TODO change with Date.today
        @loan.amount = @loan.amount + (@loan.amount * 0.1)
        @loan.payed_deadline = Date.today
        @loan.save
