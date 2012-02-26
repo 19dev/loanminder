@@ -41,7 +41,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    daemons (1.1.5)
     erubis (2.7.0)
+    eventmachine (0.12.10)
     execjs (1.3.0)
       multi_json (~> 1.0)
     faraday (0.7.6)
@@ -61,6 +63,11 @@ GEM
       oauth2 (>= 0.5.0)
       rest-client
     hashie (1.2.0)
+    heroku (2.18.1)
+      launchy (>= 0.3.2)
+      rest-client (~> 1.6.1)
+      rubyzip
+      term-ansicolor (~> 1.0.5)
     hike (1.2.1)
     httpclient (2.2.4)
     i18n (0.6.0)
@@ -68,6 +75,8 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.5)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -92,6 +101,7 @@ GEM
       omniauth (~> 1.0)
     omniauth-twitter (0.0.8)
       omniauth-oauth (~> 1.0)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.3.6)
     rack-cache (1.1)
@@ -129,6 +139,7 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rubyzip (0.9.5)
     sass (3.1.15)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
@@ -144,6 +155,11 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
+    term-ansicolor (1.0.7)
+    thin (1.3.1)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
     thor (0.14.6)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -168,14 +184,17 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   fb_graph
   fbgraph
+  heroku
   jquery-rails
   omniauth
   omniauth-facebook
   omniauth-twitter
+  pg
   rails (= 3.1.3)
   sass-rails (~> 3.1.5)
   simple_form
   sqlite3
+  thin
   turn (= 0.8.2)
   twitter
   uglifier (>= 1.0.3)
