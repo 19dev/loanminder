@@ -1,0 +1,37 @@
+<div id="nav">
+	<ul>
+		<li><%= link_to 'Loans', loans_path %></li>
+		<li><%= link_to 'Edit Loan', edit_loan_path(@loan) %></li>
+		<li><%= link_to 'Logout', signout_path %></li>
+	</ul>
+</div>
+<div id="panel">
+<p>
+  <b>Payer:</b>
+  <%= @loan.payer %>
+</p>
+ 
+<p>
+  <b>Amount:</b>
+  <%= @loan.amount %>
+</p>
+
+<p>
+  <b>Borrowed Date:</b>
+  <%= t = @loan.loan_date %>
+</p>
+
+<p>
+  <b>Expected Payed Date:</b>
+  <%= @loan.payed_deadline %>
+</p>
+
+<p>
+  <b>Payed?:</b>
+  <%= if @loan.pay?
+						@loan.pay = "Yes"
+					else
+						@loan.pay = "No"
+					end %>
+</p>
+</div>

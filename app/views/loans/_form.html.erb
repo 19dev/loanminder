@@ -1,0 +1,9 @@
+<%= simple_form_for @loan do |f| %>
+  <%= f.input :payer %>
+	<%= f.input :payer_email %>
+	<%= f.input :amount , :hint => "Now the currency is just Turkish Lira (TL). It will be convert other currencies."%>
+	<%= f.input :loan_date %>
+	<%= f.input :payed_deadline %>
+	<%= f.input :pay, :label => 'PAYED :)', :hint => 'At the begin, payed should be unchecked'%>
+  <%= f.button :submit %>
+<% end %>

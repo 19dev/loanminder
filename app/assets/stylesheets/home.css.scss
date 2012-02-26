@@ -1,0 +1,59 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background-color: #DDD;
+}
+div#logo {
+	text-align: center;
+}
+
+div#note {
+	position: absolute;
+	top: 34%;
+	left: 22%;
+	text-align: center;
+	color: black;
+	font-family: "Verdana", Sans, serif;
+	font-size: 20px;
+}
+
+div#sign_in {
+	position: absolute;
+	top: 46%;
+	left: 26%;
+	text-align: center;
+	color: red;
+	font-family: "Georgia", Sans, serif;
+	font-size: 50px;
+}
+
+div#socials {
+	position: absolute;
+	top: 55%;
+	left: 42.5%;
+}
+
+div#current_user {
+	position: absolute;
+	top: 35%;
+	left: 35%;
+}
+
+div#welcome {
+	font-family: "Verdana", Sans, serif;
+	font-size: 20px;
+}
+
+div#user{
+	color: blue;
+}
+
+div#explain{
+	width: 250%;
+	position: absolute;
+	top: 145%;
+	left: -40%;
+	font-family: "Georgia", Sans, serif;
+	font-size: 20px;
+}

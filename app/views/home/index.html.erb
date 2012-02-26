@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Loanminder</title>
+  </head>
+<body>
+	<div id="logo">
+	<%= image_tag "LoanminderLogo.png"%>	
+	</div>
+	
+	<div id="current_user">			
+	<% if current_user %>
+		<div id="welcome">Welcome <div id="user"><%= current_user.name %>! <%= link_to "Sign Out", signout_path %></div></div>
+		<div id="explain">This is a loan reminder system. If you do not want to forget your friends who have debt to you, you should just click <%= link_to "Go to LOANS Page", loans_path %>, and take your MONEY back!!!</div>
+		
+	
+	<% else %>
+	</div>
+		 <div id="note">
+				Do you forget your friends of name who borrowed money from you?
+				<br>
+				Do you forget how much money lend to your friends?
+				<br>
+				 
+			</div>
+			
+			<div id="sign_in">
+				Join LOANMINDER today
+			</div>
+			
+			<div id="socials">
+				<a href="/auth/twitter" class="auth_provider">
+				 <%= image_tag "twitter.png"%>
+				</a>
+			   <a href="/auth/facebook" class="auth_provider">
+				 <%= image_tag "facebook.png"%>
+				</a>
+			</div>
+			
+	<% end %>
+      
+	<% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= yield %>
+  </body>
+</html>

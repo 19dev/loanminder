@@ -1,0 +1,58 @@
+<div id="nav">
+	<ul>
+		<li><%= link_to 'Loans', loans_path %> <%= link_to '(+)', new_loan_path %></li>
+		<li><%= link_to 'Logout', signout_path %>
+	</ul>
+</div>
+<div id="panel">
+<h1>Listing loans</h1>
+ <table align="center">
+<thead>
+  <tr>
+    <th>Payer Name</th>
+    <th>Amount (TL)</th>
+    <th>Borrowed Date</th>
+    <th>Excepted Payed Date</th>
+    <th>Payed?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+  </tr>
+</thead>
+<tbody> 
+<% @loans.each do |loan| %>
+	<% if @loans.empty? %>
+	
+	<%else%>
+  <tr>
+    <td><%= loan.payer %></td>
+    <td><%= loan.amount %></td>
+    <td><%= loan.loan_date %></td>
+		<td><%= loan.payed_deadline %>
+		<td><%= if loan.pay?
+							loan.pay = "Yes"
+						else
+							loan.pay = "No"
+						end %></td>
+    <td><%= link_to 'Show', loan %></td>
+    <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
+    <td><%= link_to 'Destroy', loan, :confirm => 'Are you sure?',
+                                     :method => :delete %></td>
+		<td><%= link_to 'Tweet', new_tweet_path %></td>
+		<td><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=loan.payer%>, <%=loan.amount %> TL. PAY IT!! Until <%=loan.payed_deadline%>" data-hashtags="loadminder">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</td>	
+</tr>
+<% end %>
+<% end %>
+</tbody>
+</table>
+ 
+<br />
+#NOTE: if excepted pay date is greater than payed deadline and payed? is no	, show button works to tweet to remind for friends. and increase the loan %10.
+</div>

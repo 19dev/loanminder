@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  payer: MyString
+  amount: 1
+  borrow_date: 2012-02-24
+  pay: false
+
+two:
+  payer: MyString
+  amount: 1
+  borrow_date: 2012-02-24
+  pay: false
