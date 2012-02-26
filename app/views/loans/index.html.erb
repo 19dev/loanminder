@@ -43,7 +43,6 @@
     <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
     <td><%= link_to 'Destroy', loan, :confirm => 'Are you sure?',
                                      :method => :delete %></td>
-		<td><%= link_to 'Tweet', new_tweet_path %></td>
 		<td><a href="https://twitter.com/share" class="twitter-share-button" data-text="<%=loan.payer%>, <%=loan.amount %> TL. PAY IT!! Until <%=loan.payed_deadline%>" data-hashtags="loadminder">Tweet</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </td>	
@@ -54,5 +53,5 @@
 </table>
  
 <br />
-#NOTE: if excepted pay date is greater than payed deadline and payed? is no	, show button works to tweet to remind for friends. and increase the loan %10.
+#NOTE: if excepted pay date is greater than payed deadline and payed? is no	, show button works to tweet to remind for friends. and increase the loan %10. Otherwise, it works just show the loan which you triggered.
 </div>
