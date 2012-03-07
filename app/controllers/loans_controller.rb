@@ -27,13 +27,13 @@ class LoansController < ApplicationController
        @loan.save
        #provider = current_user.provider
         #if provider == 'twitter'
-          provider = User.find_by_provider_and_name('twitter', current_user.name)
-          @twitter = Twitter::Client.new(:oauth_token => provider.token, :oauth_token_secret => provider.secret)
-          @twitter.update("PAY IT!!! #{@loan.payer} until #{@loan.payed_deadline}, it is just #{@loan.amount} TL")
+          #provider = User.find_by_provider_and_name('twitter', current_user.name)
+          #@twitter = Twitter::Client.new(:oauth_token => provider.token, :oauth_token_secret => provider.secret)
+          #@twitter.update("PAY IT!!! #{@loan.payer} until #{@loan.payed_deadline}, it is just #{@loan.amount} TL")
         #elsif provider == 'facebook'
-          #provider = User.find_by_provider_and_name('facebook', current_user.name)
-          #@facebook = FbGraph::User.me(provider.token)
-          #@facebook.feed!( :message => "loanminder-test-message-#{Time.now.utc}")
+          provider = User.find_by_provider_and_name('facebook', current_user.name)
+          @facebook = FbGraph::User.me(provider.token)
+          @facebook.feed!( :message => "loanminder-test-message-#{Time.now.utc}")
       #end
        #TODO add flash message
        redirect_to loans_path
